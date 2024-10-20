@@ -27,4 +27,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            lammert/student-app:latest
+            lammertt/student-app:latest
