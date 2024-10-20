@@ -27,7 +27,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            lammert/student-app:latest
+            sinterklaas16/lammert:latest
   test:
     name: Test
     needs: [ Build ]
