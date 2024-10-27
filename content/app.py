@@ -30,10 +30,13 @@ def check_authentication():
 
 
 # The main page
-@app.route("/")
+from flask import escape
+app.route("/")
 def index():
     quotes = db.execute("select id, text, attribution from quotes order by id").fetchall()
-    return templates.main_page(quotes, request.user_id, request.args.get('error'))
+    # Escape user input here if necessary
+    escaped_quotes = [(escape(quote.id), escape(quote.text), escape(quote.attribution)) for quote in quotes]
+    return templates.main_page(escaped_quotes, escape(request.user_id), escape(request.args.get('error', '')))
 
 
 # The quote comments page
