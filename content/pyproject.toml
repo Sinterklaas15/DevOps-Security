@@ -6,8 +6,9 @@ authors = ["Saxion"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-flask = "^2.0.3"
-markupsafe = "2.1.2"
+flask = "^1.1.2"
+markupsafe = "2.0.1"
+werkzeug = "2.1.1"
 
 [tool.poetry.dev-dependencies]
 
