@@ -17,7 +17,7 @@ RUN /usr/bin/pipx install poetry
 COPY /content/pyproject.toml /content/poetry.lock /app/
 
 # Project initialization
-RUN /root/.local/bin/poetry install --no-interaction --no-ansi --no-dev
+RUN /root/.local/bin/poetry install --no-interaction --no-ansi
 
 # Copying the project files into the container
 COPY /content/. /app/
