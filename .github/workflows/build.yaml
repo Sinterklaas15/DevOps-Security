@@ -85,7 +85,7 @@ jobs:
               sudo kubectl apply -f ${{ github.workspace }}/kubernetes/deployment.yaml --force
               sudo kubectl apply -f ${{ github.workspace }}/kubernetes/nginx-service.yaml --force
 
-automated-api-tests:
+  automated-api-tests:
     runs-on: ubuntu-latest
     needs: [ deploy ]
     steps:
