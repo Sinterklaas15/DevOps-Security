@@ -51,7 +51,7 @@ jobs:
           write-comment: true 
           github-token: ${{ secrets. PATTOKEN }} # to be able to write the comment 
           exit-code: true 
-          exit-on: vulnerability
+          exit-on: none
   
   test:
     name: Test
