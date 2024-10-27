@@ -30,13 +30,10 @@ def check_authentication():
 
 
 # The main page
-from flask import escape
-app.route("/")
+@app.route("/")
 def index():
     quotes = db.execute("select id, text, attribution from quotes order by id").fetchall()
-    # Escape user input here if necessary
-    escaped_quotes = [(escape(quote.id), escape(quote.text), escape(quote.attribution)) for quote in quotes]
-    return templates.main_page(escaped_quotes, escape(request.user_id), escape(request.args.get('error', '')))
+    return templates.main_page(quotes, request.user_id, request.args.get('error'))
 
 
 # The quote comments page
@@ -51,7 +48,7 @@ def get_comments_page(quote_id):
 @app.route("/quotes", methods=["POST"])
 def post_quote():
     with db:
-        db.execute("INSERT INTO quotes (text, attribution) VALUES (?, ?)",  (request.form['text'], request.form['attribution']))
+        db.execute(f"""insert into quotes(text,attribution) values("{request.form['text']}","{request.form['attribution']}")""")
     return redirect("/#bottom")
 
 
