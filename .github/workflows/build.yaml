@@ -97,4 +97,4 @@ jobs:
         run: postman login --with-api-key ${{ secrets.POSTMAN_API_KEY }}
       - name: Run API tests
         run: |
-          postman collection run "${{ github.workspace }}/postman/collections/Intergratie Test Lammert.json"
+          postman collection run "${{ github.workspace }}/postman/collections/Lammert.json"
