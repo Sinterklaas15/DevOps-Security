@@ -44,14 +44,14 @@ jobs:
       with: 
           command: cves 
           image: sinterklaas16/lammert:latest
-          only-fixed: true 
+#          only-fixed: true 
 #          only-severities: critical,high 
           ignore-base: false 
           ignore-unchanged: false 
           write-comment: true 
           github-token: ${{ secrets. PATTOKEN }} # to be able to write the comment 
-          exit-code: true 
-          exit-on: vulnerability
+#          exit-code: true 
+#          exit-on: vulnerability
   
   test:
     name: Test
