@@ -44,7 +44,7 @@ jobs:
       with: 
           command: cves 
           image: sinterklaas16/lammert:latest
-#         only-fixed: true 
+          only-fixed: true 
           only-severities: critical,high 
           ignore-base: false 
           ignore-unchanged: false 
