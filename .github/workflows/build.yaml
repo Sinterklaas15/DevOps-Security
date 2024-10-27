@@ -86,7 +86,6 @@ jobs:
               sudo kubectl apply -f ${{ github.workspace }}/kubernetes/nginx-service.yaml --force
 
   automated-api-tests:
-    name: http 200
     runs-on: ubuntu-latest
     needs: [ deploy ]
     steps:
